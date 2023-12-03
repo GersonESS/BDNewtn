@@ -55,7 +55,7 @@ insert into Barco
  (103, 'Clipper', 'Verde'),
  (104, 'Marine', 'Vermelho');
 
- drop table Barco;
+drop table Barco;
 
 drop table Reserva;
 
