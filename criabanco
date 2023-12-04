@@ -84,12 +84,20 @@ values
 (64, 102, '1998-05-09'),
 (74, 103, '1998-08-09');
 
+SELECT DISTINCT nome, idade
+FROM Marinheiro;
 
+SELECT DISTINCT idMarinheiro
+FROM Reserva
+WHERE idMarinheiro IN (22, 29);
 
 select * from Reserva;
+SELECT nome, idade
+FROM Marinheiro;
 
-
-
+SELECT idMarinheiro
+FROM Reserva
+WHERE dia BETWEEN '1998-08-01' AND '1998-08-31';
 desc Reserva;
 
 SELECT res.dia, res.idBarco, bar.nome
@@ -104,17 +112,11 @@ SELECT idMarinheiro, nome
 FROM Marinheiro
 WHERE idade IS NULL;
 
-SELECT DISTINCT idMarinheiro
-FROM Reserva
-WHERE idMarinheiro IN (22, 29);
 
 SELECT DISTINCT idBarco
 FROM Reserva
 WHERE idBarco IN (SELECT idBarco FROM Barco WHERE nome = 'Marine');
 
-SELECT DISTINCT idBarco
-FROM Reserva
-WHERE idBarco IN (SELECT idBarco FROM Barco WHERE nome = 'Marine');
 
 SELECT idMarinheiro, nome
 FROM Marinheiro
@@ -124,6 +126,12 @@ SELECT idMarinheiro
 FROM Reserva
 WHERE dia BETWEEN '1998-08-01' AND '1998-08-31';
 
+
+select res.dia, res.idBarco 
+from marinheiro as mar
+inner join reserva as res
+on mar.idmarinheiro = res.idMarinheiro
+where mar.nome='Dust';
 
 status;
 insert into regcli 
