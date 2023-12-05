@@ -1,3 +1,22 @@
+CREATE Database Produtos;
+USE Produtos;
+CREATE Table TipoProduto
+(
+codTipo INT PRIMARY KEY,
+descricao VARCHAR(50)
+);
+CREATE Table Produto
+(
+codigo INT PRIMARY KEY,
+descricao VARCHAR(100),
+preco FLOAT,
+codTipo INT,
+CONSTRAINT fktipoproduto FOREIGN KEY (codTipo) REFERENCES TipoProduto(codTipo)
+);
+
+
+
+
 show databases;
 
 create database if not exists Marinheiros;
